@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/happtNewYear/static/css/main.2c93716b.css",
+    "main.js": "/happtNewYear/static/js/main.334efdbf.js",
+    "static/media/calvinLight.otf": "/happtNewYear/static/media/calvinLight.6323f02956b6aef29de4.otf",
+    "static/media/calvin.otf": "/happtNewYear/static/media/calvin.51c10ff3ea9f9d3fa32c.otf",
+    "static/media/svitok.png": "/happtNewYear/static/media/svitok.dbb9f229ebd7d12d448b.png",
+    "static/media/rrr.ttf": "/happtNewYear/static/media/rrr.cc22a0aea29dfb200840.ttf",
+    "static/media/alc.png": "/happtNewYear/static/media/alc.ef933f43ed8ec4125070.png",
+    "static/media/branch.png": "/happtNewYear/static/media/branch.2151a40bda57645da47e.png",
+    "static/media/rulet.png": "/happtNewYear/static/media/rulet.d3a5d6432de8afc84725.png",
+    "static/media/salat.png": "/happtNewYear/static/media/salat.f7ddb610de3bb0d60ed8.png",
+    "index.html": "/happtNewYear/index.html",
+    "main.2c93716b.css.map": "/happtNewYear/static/css/main.2c93716b.css.map",
+    "main.334efdbf.js.map": "/happtNewYear/static/js/main.334efdbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c93716b.css",
+    "static/js/main.334efdbf.js"
+  ]
+}
