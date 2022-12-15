@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { setCurrentPage } from "../../store/currentPage"
 
 const ButtonWrapper = styled.div`
     width: 190px;
@@ -22,8 +23,8 @@ const StyledButton = styled.button`
 `
 
 
-const Button: React.FC<{children: string}> = ({children}) => {
-    return <ButtonWrapper> <StyledButton>{children}</StyledButton> </ButtonWrapper>
+const Button: React.FC<{children: string, id: number}> = ({children, id}) => {
+    return <ButtonWrapper onClick={() => setCurrentPage(id)}> <StyledButton>{children}</StyledButton> </ButtonWrapper>
 }
 
 export default Button

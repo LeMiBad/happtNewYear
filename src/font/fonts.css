@@ -7,3 +7,7 @@
     font-family: "calvin";
     src: url("./calvin.otf")
 }
+@font-face {
+    font-family: "calvinL";
+    src: url("./calvinLight.otf")
+}

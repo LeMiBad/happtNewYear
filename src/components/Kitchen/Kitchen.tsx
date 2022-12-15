@@ -11,7 +11,7 @@ const Floor = styled.div`
     transform: scale(0.6);
     background-size: cover !important;
     background: url('https://s3-alpha-sig.figma.com/img/a3bb/c21f/89bb51936a93c08c0439bb0530b658af?Expires=1672012800&Signature=VYy-yzNXmwfsIMZs00PTidtbb5ZV4Zra~8JCbRnREm57JWa~tr81X6vcBrgnhCtj20liDWnEnRjZiTn1pQzURMcyb9wfsaUKpgqMx6z~xKg6ZC2vOBCfgyslYPk2kkW2E-b~vso4ye~ijDtCFvZtVYews4ErqY92RLTGdy8IhzkFuJO9KguHwDQeATGruW0wqqyOtLsPZCujrYJB2FCT8q38OmvMFtSmsdoe3nJ5umDEcAcOgLL74Gbt10k8q1HNaH87qYcBXTQ6p70ehssHYyOOdH7XcfujkUdQJ3Xi8u5oAHMTcJqAkQXZezJokiUz~T7o~pHyvUCuYE57IundIg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
-    `
+`
 
 const Tree = styled.div`
     position: absolute;
