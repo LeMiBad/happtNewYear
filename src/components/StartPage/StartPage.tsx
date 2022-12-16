@@ -28,6 +28,7 @@ const SvitokWrapper = styled.div`
         position: absolute;
         width: 100%;
         height: 113%;
+        max-height: 600px;
     }
 
     h1 {

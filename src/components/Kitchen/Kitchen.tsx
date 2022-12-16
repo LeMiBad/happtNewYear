@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import snowflakes from './../../icons/snowflakes.png'
 
 
 const Floor = styled.div`
@@ -24,8 +24,19 @@ const Tree = styled.div`
     background: url('https://s3-alpha-sig.figma.com/img/edc7/53f5/36bae1c4beb34d737e93642717c2e04f?Expires=1672012800&Signature=GTe6CRPT9NG7LXdkdP1MmX9HYBI~fu18BA7r75HYAurKruyCwny3sGiWgO3bWiBvNWHFqX-oiqxQUd34RVi3-IKTV9ejU9Te3-nSjH6HD-xcmqUTVQYTJP9PS3WlwmDTYwIAn-3wWzBJG0-NpUjYWLSFBI1avW-HaeXp7sO32TbTJki5-1c~Ea9Lo8zw3T8MKlnLyRgjUyaDAXuDd5LulJwQ-sECi7l1i0tDrirvbxWlT2GG5fXgQ50FAaHFEUsgCRm2pyQl~-QBYxT42pbEKqC0LQx1~r-aOeO-wBuoM0UPS8cKB1tGENY0hiBK~S1CLdTEnid1FBHiAogLYfU4LA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
 `
 
+const Snowflakes = styled.img<{top?: boolean}>`
+    position: absolute;
+    width: 166%;
+    ${props => props.top? 'top: -34vw;' : 'bottom: 0;'}
+    ${props => props.top? 'transform: rotate(180deg) scale(0.6);' : 'transform: scale(0.6);'}
+    left: -33%;
+    background-size: cover !important;
+`
+
 const Kitchen = () => {
     return <>
+        <Snowflakes top src={snowflakes}/>
+        <Snowflakes src={snowflakes}/>
         <Floor />
         <Tree />
     </>
