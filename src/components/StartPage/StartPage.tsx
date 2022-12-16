@@ -6,13 +6,13 @@ import svitok from './svitok.png'
 const StartPageWrapper = styled.div`
     z-index: 10;
     position: absolute;
+    padding-top: 5%;
     background-color: rgba(0, 0, 0, 0.35);
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
 `
 
@@ -23,12 +23,13 @@ const SvitokWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 70px;
 
     .svitok {
         position: absolute;
         width: 100%;
         height: 113%;
-        max-height: 600px;
+        max-height: 506px;
     }
 
     h1 {
@@ -48,7 +49,7 @@ const SvitokWrapper = styled.div`
 
     h1:nth-child(2) {
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         text-align: center;
         font-size: 24px;
     }
