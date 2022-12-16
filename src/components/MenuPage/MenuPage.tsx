@@ -4,7 +4,8 @@ import salat from './salat.png'
 import rulet from './rulet.png'
 import alc from './alc.png'
 import Button from "../Button/Button"
-import { useState } from "react"
+import { useStore } from "effector-react"
+import { $Foods, setPickedFood } from "../../store/currentPage"
 
 
 
@@ -93,7 +94,8 @@ const BranchWrapper = styled.div`
 
 
 const MenuPage = () => {
-    const [pickedFood, setPickedFood] = useState(-1)
+    const pickedFood = useStore($Foods)
+
 
     const foods = [
     {name: 'Оливье', img: salat},
@@ -124,7 +126,7 @@ const MenuPage = () => {
                             </FoodItem>
                 })}
             </FoodGroup>
-            {pickedFood !== -1? <Button id={3}>Далее</Button> : <></>}
+            {pickedFood !== -1? <Button id={2}>Далее</Button> : <></>}
         </StyledMenuPage>
     )
 }
