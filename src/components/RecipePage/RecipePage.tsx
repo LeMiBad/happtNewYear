@@ -83,6 +83,7 @@ const FoodItemWrapper = styled.div`
 
 
 
+
 const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
 const RecipePage = () => {

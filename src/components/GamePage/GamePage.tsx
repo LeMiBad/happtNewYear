@@ -114,6 +114,12 @@ const FoodItem = styled.img<{isClear: boolean}>`
     background-color: ${props => props.isClear? 'rgba(0, 0, 0, 0.1)' : 'white'};
 `
 
+const Player = styled.img`
+    position: absolute;
+    bottom: 4vh;
+    width: 100px;
+`
+
 const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
 const GamePage = () => {
@@ -150,6 +156,7 @@ const GamePage = () => {
                     <h1>3</h1>
                 </div>
             </GameVars>
+            <Player  src="https://s3-alpha-sig.figma.com/img/0565/3565/30de1a3dd5ad5d9b733f53cfabeb6db1?Expires=1672012800&Signature=Aq9GkUsvsMi8BeXZshqYnRfIzwTCoKT7UKceGtN6Jipsqs6DgRrdwCIhm2tr-aJ2e9qLFBc0Fk1s6Ul2DvFv~OV4SKhJTH-MgdQKyLUpA21zfaCt2uvypaJp1EDPS0eFBE2en25y0Uix94IO1b9kuex5WkitzAcX-25okUZMzLU9zUuDNKzfYLYL74XBX9Uyk8h5HAJc~c-IOvbjuMBE8IdkDgKSmaX4zoXHlaV17SXkQoOH-F4miYtg4UmyUI7EYyLz~c2ZsrV2wHNO5KhrFdsXcL1SRhiOA1Gk6wJg3d8gRKO3L0kbT7pdZinAZvfvnSYxQVHpnPWBWTVnnPXtmg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"/>
         </StyledGamePage>
     )
 }
