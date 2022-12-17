@@ -1,6 +1,6 @@
 import { useStore } from "effector-react"
 import styled from "styled-components"
-import { $Foods, $Recipe, setCurrentPage } from "../../store/currentPage"
+import { $Foods, $Recipe } from "../../store/currentPage"
 import Button from "../Button/Button"
 import svitok from './../StartPage/svitok.png'
 
@@ -108,7 +108,7 @@ const RecipePage = () => {
                     })}
                 </FoodWrapper>
             </SvitokWrapper>
-            <Button id={1}>Далее</Button>
+            <Button id={4}>Далее</Button>
         </StartPageWrapper>
     )
 }
