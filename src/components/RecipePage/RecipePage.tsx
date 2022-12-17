@@ -83,7 +83,7 @@ const FoodItemWrapper = styled.div`
 
 
 
-
+const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
 const RecipePage = () => {
     const recipe = useStore($Recipe)
@@ -94,7 +94,7 @@ const RecipePage = () => {
             <SvitokWrapper>
                 <img className="svitok" alt="svitok" src={svitok}></img>
                 <h2>Ингредиенты</h2>
-                <h1>Глинтвейн</h1>
+                <h1>{allFoods[pickedFood]}</h1>
                 <FoodWrapper>
                     {recipe[pickedFood].map((row, i) => {
                         return <div key={i} style={{display: 'flex', justifyContent: "space-between"}}>
@@ -109,6 +109,7 @@ const RecipePage = () => {
                 </FoodWrapper>
             </SvitokWrapper>
             <Button id={4}>Далее</Button>
+            
         </StartPageWrapper>
     )
 }
