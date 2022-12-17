@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/happtNewYear/static/css/main.2c93716b.css",
-    "main.js": "/happtNewYear/static/js/main.f2bc64b9.js",
+    "main.js": "/happtNewYear/static/js/main.6b74a9db.js",
     "static/media/calvinLight.otf": "/happtNewYear/static/media/calvinLight.6323f02956b6aef29de4.otf",
     "static/media/calvin.otf": "/happtNewYear/static/media/calvin.51c10ff3ea9f9d3fa32c.otf",
     "static/media/svitok.png": "/happtNewYear/static/media/svitok.dbb9f229ebd7d12d448b.png",
@@ -13,10 +13,10 @@
     "static/media/salat.png": "/happtNewYear/static/media/salat.f7ddb610de3bb0d60ed8.png",
     "index.html": "/happtNewYear/index.html",
     "main.2c93716b.css.map": "/happtNewYear/static/css/main.2c93716b.css.map",
-    "main.f2bc64b9.js.map": "/happtNewYear/static/js/main.f2bc64b9.js.map"
+    "main.6b74a9db.js.map": "/happtNewYear/static/js/main.6b74a9db.js.map"
   },
   "entrypoints": [
     "static/css/main.2c93716b.css",
-    "static/js/main.f2bc64b9.js"
+    "static/js/main.6b74a9db.js"
   ]
 }
