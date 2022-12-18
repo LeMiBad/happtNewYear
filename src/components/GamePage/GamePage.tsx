@@ -143,7 +143,7 @@ const GamePage = () => {
         else if (current > widthOne && current < widthOne*2) return [0, 1, 0, 0]
         else if (current > widthOne*2 && current < widthOne*3) return [0, 0, 1, 0]
         else if (current > widthOne*3 && current < widthOne*4) return [0, 0, 0, 1]
-        return [0, 0, 0, 1]
+        return sector
     }
 
 
@@ -153,25 +153,26 @@ const GamePage = () => {
         const startX = e.changedTouches[0].screenX
 
 
-        let currentPos = [0]
+        let currentPos = [0, 9]
 
         const moveFunc = (ev: TouchEvent) => {
             currentPos = getSector(ev.changedTouches[0].clientX)
+            console.log('Пиздец')
             if(startX > ev.changedTouches[0].screenX) {
                 setPlayer({vector: 'left', sector: currentPos})
             }
             else {
                 setPlayer({vector: 'right', sector: currentPos})
             }
-
-
         }
         
-        e.target.parentNode.addEventListener('touchmove', moveFunc , {passive: true})
+        e.target.addEventListener('touchmove', moveFunc , {passive: true})
 
         e.target.addEventListener('touchend', (eve: TouchEvent) => {
             setPlayer({vector: 'middle', sector: currentPos})
-            // e.target.parentNode.removeEventListener('touchmove', moveFunc)
+            if(e.target) {
+                e.target.removeEventListener('touchmove', moveFunc)
+            }
         })
     }
 
