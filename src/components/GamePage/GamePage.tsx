@@ -153,11 +153,10 @@ const GamePage = () => {
         const startX = e.changedTouches[0].screenX
 
 
-        let currentPos = [0, 9]
+        let currentPos = sector
 
         const moveFunc = (ev: TouchEvent) => {
             currentPos = getSector(ev.changedTouches[0].clientX)
-            console.log('Пиздец')
             if(startX > ev.changedTouches[0].screenX) {
                 setPlayer({vector: 'left', sector: currentPos})
             }
