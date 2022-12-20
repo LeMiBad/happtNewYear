@@ -1,4 +1,4 @@
-import { createStore } from "effector";
+import { createEvent, createStore } from "effector";
 import bacon from './../icons/foods/bacon.png'
 import carrot from './../icons/foods/carrot.png'
 import chezze from './../icons/foods/chezze.png'
@@ -27,7 +27,7 @@ import water from './../icons/foods/water.png'
 import svitok from './../icons/foods/svitok.png'
 
 const random = () => Date.now().toString(36) + Math.random().toString(36).substr(2)
-const allFoodsArray = [svitok, bacon,carrot,chezze,chicken,cucumbers,eggs,flowers,goroh,grass,imbir,leaf,lemon,milk,mushrooms,oil,orange,potato,salt,souse,spices,star,stick,sugar,vine,water,svitok,
+const allFoodsArray = [svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, bacon,carrot,chezze,chicken,cucumbers,eggs,flowers,goroh,grass,imbir,leaf,lemon,milk,mushrooms,oil,orange,potato,salt,souse,spices,star,stick,sugar,vine,water,svitok,
 ]
 
 function getRandomInt(max: number) {
@@ -49,7 +49,7 @@ const dropGenerator = (id: number) => {
     const dropArray = []
     let time = 2000
     let top = 0
-    for(let i = 0; i < 50; i++) {
+    for(let i = 0; i < 10; i++) {
         const randomFood = allFoodsArray[Math.floor(Math.random() * allFoodsArray.length)]
         dropArray.push({
             id: random(),
@@ -59,7 +59,7 @@ const dropGenerator = (id: number) => {
             time: time,
             url: randomFood 
         })
-        time+=1500
+        time+=1450
         top+=100
     }
     return dropArray
@@ -72,7 +72,7 @@ const initialDrops = [
 ]
 
 
-
+export const resetDrops = createEvent()
 export const $drops = createStore(initialDrops)
-
+    .on(resetDrops, _ => [dropGenerator(0),dropGenerator(1),dropGenerator(2),])
 

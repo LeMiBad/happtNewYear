@@ -1,7 +1,8 @@
 import { useStore } from "effector-react"
+import { useEffect } from "react"
 import styled from "styled-components"
 import { $Foods, $Recipe } from "../../store/currentPage"
-import { $drops } from "../../store/Drops"
+import { $drops, resetDrops } from "../../store/Drops"
 import Drop from "../Drop/Drop"
 import PlayerEl from "../PlayerEl/PlayerEl"
 import branch from './branch.png'
@@ -124,6 +125,14 @@ const GamePage = () => {
     const pickedFood = useStore($Foods)
     const drops = useStore($drops)
 
+    useEffect(() => {
+        setInterval(() => {
+            resetDrops()
+        }, 14500)
+    }, [])
+
+
+    if(hearts === 0) return <h1>ПРоёбал ты сука</h1>
 
     return (
         <StyledGamePage>
