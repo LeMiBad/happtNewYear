@@ -107,28 +107,28 @@ const GameVars = styled.div`
     }
 `
 
-const FoodItem = styled.img<{isClear: boolean}>`
+const FoodItem = styled.img<{isPicked: boolean}>`
     border: 3px solid #FF8A00;
     width: 25px;
     height: 25px;
     border-radius: 8px;
     padding: 4px;
     margin-top: 5px;
-    background-color: ${props => props.isClear? 'rgba(0, 0, 0, 0.1)' : 'white'};
+    background-color: ${props => props.isPicked? 'rgba(0, 0, 0, 0.1)' : 'white'};
 `
 
 const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
 const GamePage = () => {
-    const recipe = useStore($Recipe)
+    const {recipe, hearts, svitokCount} = useStore($Recipe)
     const pickedFood = useStore($Foods)
     const drops = useStore($drops)
 
 
     return (
         <StyledGamePage>
-            {drops[pickedFood].map(({url, left, top, time, id}) => {
-                return <Drop key={id} time={time} top={top} left={left} url={url}></Drop>
+            {drops[pickedFood].map(({url, left, top, time, id, type}) => {
+                return <Drop key={id} time={time} top={top} type={type} left={left} url={url}></Drop>
             })}
             <BranchWrapper>
                 <img src={branch} alt='branch'/>
@@ -142,7 +142,7 @@ const GamePage = () => {
                     <div></div>
                     <p>Ингредиенты</p>
                 </ModalButton>
-                {recipe[pickedFood].flat(1).map((({url}) => <FoodItem key={url} isClear={false} src={url} />))}
+                {recipe[pickedFood].flat(1).map((({url, isPicked}) => <FoodItem key={url} isPicked={isPicked} src={url} />))}
             </RecipeList>
             <GameVars>
                 <ModalButton pad={25} h={52} deg={0} img="https://s3-alpha-sig.figma.com/img/3b99/48fe/7c379f136d911ad6a786e3e0e2d89574?Expires=1672012800&Signature=XJyRy1fTss1VBHykyPn0mQPfkCzVy1GMUQqRp~7yVf4UUjhgtoMKIIVVXer1rL9mMmJxfs~dJUFxy7yeARpvcc72t18z6lyAktTHrBVepZPPXlvsnst0ti9AA43pi6NmonOYhsQrNesot0l5M8nwNKqtXASRe-rqGz9gH0bCb9wYPGuRUQEY75B0Kl5dccetrxe6gw8n1Oq1NpMjC~PLqCguY~4WqjlPlWpoNlJlieWb2ciEYzq5UEsqTgn~dXQbynZvmptBFwAZ7ialeECnbopm7LDhBZZgHC8KWDD~YxvpcrOTnQSGNW-R1Yppke1bxOq2SVh~g5jOuTjfX0aW9Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
@@ -151,11 +151,11 @@ const GamePage = () => {
                 </ModalButton>
                 <div className="imgCont">
                     <img style={{width: 40, marginTop: 10}} alt={'Свитки'} src="https://s3-alpha-sig.figma.com/img/d122/800b/2b8b930a092803916848ebe7265c382f?Expires=1672012800&Signature=mO5hgq6D4Vzmyfw6JOycVFytwoODMyp1LtiPCWP6pMnh5ClQtnTbtYeNJxv-CVAqze~HFWIvl3z7WmCtQ966QEeGbWS--E9SJZG0I7t7A2ga4kq5ci~geHt8bC~eaBnJba5lUr8oYhF32dBzy8qno2-1XHE2pcmiuHiieZDmBhRq80sjqF2aN7EQFxv~Zz1yy5Kf6QVtrkH-rKPkWPM5R4gNYTqfsLuDt66s16~ms4g73dCjSrl8OtUuFf6BbmXT4B-Ma80Kq2XnewmmITG3HXecv888JGhDB4VqdBFg6yj37f9hwQHPhI7k-TNu4ObUoZjd6I12oqNQEYNz1e07tA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"></img>
-                    <h1>0</h1>
+                    <h1>{svitokCount}</h1>
                 </div>
                 <div className="imgCont">
                     <img style={{width: 40, marginTop: 10}} alt={'Жизни'} src="https://s3-alpha-sig.figma.com/img/af57/95ef/8f65566cb1cb9835b2c7d11ec2f9fa17?Expires=1672012800&Signature=FDN4cH2SBRe~iang0Xc-hpjZM79Onpp~V-7rycKSw99V3KKS09zclvecrp1ay5AS1lQqHWa7Yg3GqVZuTVXP~8Ksu26Za9DH3DciszIVCTgYA7IUQMSLsYX0s90Dz~t5Z6DuGQGikWqhl4F-qORR1ep~31~dQvbbnBQUubzbUB5TrprbBqLovPpaaW7uDjq9anQjd~evAmMUSDIBduTC80hJMnmKoBuErh0D7qakVLRMDEyUpPfRkFL1reaLU8yHuG~S1~FG92tB74BHCycWDi6VHfKoyJ3CW7KuXqKWn5imxsjG~61RRu7HTyk~aWAqYADmwG-Uy7b9bnJ-uBYzhw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"></img>
-                    <h1>3</h1>
+                    <h1>{hearts}</h1>
                 </div>
             </GameVars>
             <PlayerEl/>

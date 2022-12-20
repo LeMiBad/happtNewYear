@@ -87,7 +87,7 @@ const FoodItemWrapper = styled.div`
 const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
 const RecipePage = () => {
-    const recipe = useStore($Recipe)
+    const {recipe} = useStore($Recipe)
     const pickedFood = useStore($Foods)
 
     return (
