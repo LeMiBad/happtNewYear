@@ -45,7 +45,7 @@ const getStatus = (index: number, element: string) => {
 }
 
 
-const dropGenerator = () => {
+const dropGenerator = (id: number) => {
     const dropArray = []
     let time = 2000
     let top = 0
@@ -53,7 +53,7 @@ const dropGenerator = () => {
         const randomFood = allFoodsArray[Math.floor(Math.random() * allFoodsArray.length)]
         dropArray.push({
             id: random(),
-            type: getStatus(0, randomFood),
+            type: getStatus(id, randomFood),
             top: top, 
             left: getRandomInt(3),
             time: time,
@@ -66,9 +66,9 @@ const dropGenerator = () => {
 }
 
 const initialDrops = [
-    dropGenerator(),
-    dropGenerator(),
-    dropGenerator(),
+    dropGenerator(0),
+    dropGenerator(1),
+    dropGenerator(2),
 ]
 
 
