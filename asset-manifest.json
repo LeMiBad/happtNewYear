@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/happtNewYear/static/css/main.2c93716b.css",
-    "main.js": "/happtNewYear/static/js/main.a294073e.js",
+    "main.js": "/happtNewYear/static/js/main.c2be3580.js",
     "static/media/calvinLight.otf": "/happtNewYear/static/media/calvinLight.6323f02956b6aef29de4.otf",
     "static/media/calvin.otf": "/happtNewYear/static/media/calvin.51c10ff3ea9f9d3fa32c.otf",
     "static/media/svitok.png": "/happtNewYear/static/media/svitok.dbb9f229ebd7d12d448b.png",
@@ -13,12 +13,13 @@
     "static/media/stay.png": "/happtNewYear/static/media/stay.e8556b8f4eca5ad956f6.png",
     "static/media/salat.png": "/happtNewYear/static/media/salat.f7ddb610de3bb0d60ed8.png",
     "static/media/run.png": "/happtNewYear/static/media/run.77ae699ad9a9e83fe03f.png",
+    "static/media/lenta.png": "/happtNewYear/static/media/lenta.e491a51f56816ef0670a.png",
     "index.html": "/happtNewYear/index.html",
     "main.2c93716b.css.map": "/happtNewYear/static/css/main.2c93716b.css.map",
-    "main.a294073e.js.map": "/happtNewYear/static/js/main.a294073e.js.map"
+    "main.c2be3580.js.map": "/happtNewYear/static/js/main.c2be3580.js.map"
   },
   "entrypoints": [
     "static/css/main.2c93716b.css",
-    "static/js/main.a294073e.js"
+    "static/js/main.c2be3580.js"
   ]
 }
