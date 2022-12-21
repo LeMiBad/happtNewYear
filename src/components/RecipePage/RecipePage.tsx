@@ -36,7 +36,8 @@ const SvitokWrapper = styled.div`
     h1 {
         color: #5E401E;
         z-index: 11;
-        margin-bottom: 2%;
+        font-size: 28px;
+        margin-bottom: 5%;
         font-family: 'book';
         font-weight: 600;
     }

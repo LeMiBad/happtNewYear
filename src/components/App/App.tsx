@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         font-family: 'Roboto';
         user-select: none;
+        overflow: hidden;
     }
     body {
         width: 100%;
