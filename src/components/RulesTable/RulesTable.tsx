@@ -50,7 +50,7 @@ const RulesTable: React.FC<{children: string}> = ({children}) => {
     return (
         <>
             <StyledRulesTable>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
+                <div style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
                     <h1>Правила</h1>
                     <h3>{children}</h3>
                 </div>

@@ -33,9 +33,9 @@ const recipeArr = [
     [vine, orange, imbir, water, stick, flowers, star, sugar],
 ]
 const allFoodsArray = [
-    [...recipeArr[0], ...recipeArr[0], ...recipeArr[0], ...recipeArr[1], ...recipeArr[2], svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok],
-    [...recipeArr[1], ...recipeArr[1], ...recipeArr[1], ...recipeArr[0], ...recipeArr[2], svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok],
-    [...recipeArr[2], ...recipeArr[2], ...recipeArr[2], ...recipeArr[1], ...recipeArr[0], svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok, svitok]
+    [...recipeArr[0], ...recipeArr[0],  ...recipeArr[0], ...recipeArr[0], ...recipeArr[1], ...recipeArr[2], svitok, svitok, svitok, svitok, svitok, svitok, svitok],
+    [...recipeArr[1], ...recipeArr[1],  ...recipeArr[1], ...recipeArr[1], ...recipeArr[0], ...recipeArr[2], svitok, svitok, svitok, svitok, svitok, svitok, svitok],
+    [...recipeArr[2], ...recipeArr[2],  ...recipeArr[2], ...recipeArr[2], ...recipeArr[1], ...recipeArr[0], svitok, svitok, svitok, svitok, svitok, svitok, svitok]
 ]
 
 function getRandomInt(max: number) {
