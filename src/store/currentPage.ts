@@ -198,9 +198,11 @@ const initialRecipe = {
 export const damage = createEvent()
 export const pickSvitok = createEvent()
 export const pickFood = createEvent<string>()
+export const resetStats = createEvent()
 export const $Recipe = createStore(initialRecipe)
     .on(damage, state => {return {...state, hearts: state.hearts-1}})
-    .on(pickSvitok, state => {return {...state, svitokCount: state.svitokCount+1}})
+    .on(resetStats, state => {return {...initialRecipe, svitokCount: state.svitokCount}})
+    .on(pickSvitok, state => {return {...state, svitokCount: state.svitokCount >= 30? state.svitokCount : state.svitokCount+1}})
     .on(pickFood, (state, food) => {
         const newState = state.recipe.map(rec => {
             return rec.map(arr => {

@@ -2,8 +2,7 @@ import styled from "styled-components"
 import { setCurrentPage } from "../../store/currentPage"
 
 const ButtonWrapper = styled.div`
-    width: 190px;
-    height: 70px;
+    padding: 10px;
     background-color: red;
     display: flex;
     justify-content: center;
@@ -17,6 +16,8 @@ const StyledButton = styled.button`
     padding: 10px 50px;
     box-sizing: border-box;
     border: 0;
+    min-width: 212px;
+    white-space: nowrap;
     border-radius: 5px;
     color: white;
     background: linear-gradient(138deg, rgba(255,190,114,1) 0%, rgba(255,138,0,1) 50%, rgba(255,190,114,1) 100%);;

@@ -1,9 +1,11 @@
 import { useStore } from "effector-react"
 import { useEffect } from "react"
 import styled from "styled-components"
-import { $Foods, $Recipe } from "../../store/currentPage"
+import { $Foods, $Recipe, setCurrentPage } from "../../store/currentPage"
 import { $drops, resetDrops } from "../../store/Drops"
+import { makeLevel } from "../../store/Levels"
 import Drop from "../Drop/Drop"
+import LoosePage from "../LoosePage/LoosePage"
 import PlayerEl from "../PlayerEl/PlayerEl"
 import branch from './branch.png'
 
@@ -125,14 +127,26 @@ const GamePage = () => {
     const pickedFood = useStore($Foods)
     const drops = useStore($drops)
 
+
     useEffect(() => {
-        setInterval(() => {
+        const interval = setInterval(() => {
             resetDrops()
-        }, 14500)
-    }, [])
+        }, drops[pickedFood][drops[pickedFood].length-1].time+100);
+    
+        return () => clearInterval(interval);
+    }, [pickedFood, drops]);
 
 
-    if(hearts === 0) return <h1>ПРоёбал ты сука</h1>
+    let isWin = true
+    for(let i = 0; i < recipe[pickedFood].flat(1).length; i++) {
+        if(!recipe[pickedFood].flat(1)[i].isPicked) isWin = false
+    }
+
+    if(isWin) {
+        makeLevel(pickedFood)
+        setCurrentPage(6)
+    }
+    if(hearts === 0) {setCurrentPage(5)}
 
     return (
         <StyledGamePage>

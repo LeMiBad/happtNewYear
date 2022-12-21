@@ -6,6 +6,8 @@ import alc from './alc.png'
 import Button from "../Button/Button"
 import { useStore } from "effector-react"
 import { $Foods, setPickedFood } from "../../store/currentPage"
+import { useEffect } from "react"
+import { $levels } from "../../store/Levels"
 
 
 
@@ -91,17 +93,16 @@ const BranchWrapper = styled.div`
 `
 
 
-
+const returnImg = [salat, rulet, alc]
 
 const MenuPage = () => {
     const pickedFood = useStore($Foods)
+    const foods = useStore($levels)
 
 
-    const foods = [
-    {name: 'Оливье', img: salat},
-        {name: 'Куриные рулетики', img: rulet},
-        {name: 'Глинтвейн', img: alc},
-    ]
+    useEffect(() => {
+        setPickedFood(-1)
+    }, [])
 
 
     const foodHandler = (select: number) => {
@@ -109,6 +110,7 @@ const MenuPage = () => {
         else setPickedFood(select)
     }
 
+    console.log(foods)
 
     return (
         <StyledMenuPage>
@@ -119,11 +121,11 @@ const MenuPage = () => {
             <p>Времени у тебя немного, поэтому готовим самое основное.</p>
             <p>Жми на любое блюдо, потом ты сможешь вернуться и выбрать остальные!</p>
             <FoodGroup>
-                {foods.map(({name, img}, i) => {
-                    return <FoodItem active={(i === pickedFood)? true : false} onClick={() => foodHandler(i)} key={i}>
-                                <img src={img} alt={name}/>
+                {foods.map(({name, img, win}, i) => {
+                    return !win? <FoodItem active={(i === pickedFood)? true : false} onClick={() => foodHandler(i)} key={i}>
+                                <img src={returnImg[img]} alt={name}/>
                                 <h1>{name}</h1>
-                            </FoodItem>
+                            </FoodItem> : <></>
                 })}
             </FoodGroup>
             {pickedFood !== -1? <Button id={2}>Далее</Button> : <></>}

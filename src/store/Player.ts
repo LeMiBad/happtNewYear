@@ -13,5 +13,7 @@ const initialPlayerState = {
 }
 
 export const setPlayer = createEvent<IPlayer>()
+export const resetPlayer = createEvent()
 export const $Player = createStore(initialPlayerState)
     .on(setPlayer, (_, cur) => cur)
+    .on(resetPlayer, _ => initialPlayerState)

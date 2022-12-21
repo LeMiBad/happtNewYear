@@ -3,10 +3,12 @@ import { createGlobalStyle } from "styled-components"
 import { $currentPage } from "../../store/currentPage"
 import GamePage from "../GamePage/GamePage"
 import Kitchen from "../Kitchen/Kitchen"
+import LoosePage from "../LoosePage/LoosePage"
 import MenuPage from "../MenuPage/MenuPage"
 import RecipePage from "../RecipePage/RecipePage"
 import RulesPage from "../RulesPage/RulesPage"
 import StartPage from "../StartPage/StartPage"
+import WinPage from "../WinPage/WinPage"
 import './../../font/fonts.css'
 
 
@@ -26,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 
 const App = () => {
     const currentPage = useStore($currentPage)
-    const pages = [<StartPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>]
+    const pages = [<StartPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>]
 
 
     return (
