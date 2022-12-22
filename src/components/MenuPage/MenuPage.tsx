@@ -127,7 +127,7 @@ const MenuPage = () => {
                     return !win? <FoodItem active={(i === pickedFood)? true : false} onClick={() => foodHandler(i)} key={i}>
                                     <img src={returnImg[img]} alt={name}/>
                                     <h1>{name}</h1>
-                                </FoodItem> : <></>
+                                </FoodItem> : null
                 })}
             </FoodGroup>
             {pickedFood !== -1? <Button id={isOld? 3 : 2}>Далее</Button> : <></>}

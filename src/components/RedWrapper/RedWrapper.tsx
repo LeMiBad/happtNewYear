@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import logo from './../../icons/logo.png'
 
 
 
@@ -11,6 +11,7 @@ const StyledRedWrapper = styled.div`
 `
 
 const StyledItem = styled.div`
+    position: relative;
     width: 80vw; 
     border-radius: 20px;
     box-sizing: border-box;
@@ -24,6 +25,12 @@ const StyledItem = styled.div`
         font-size: 16px;
         color: #FFEDAF;
     }
+    img {
+        left: 35%;
+        top: 3px;
+        width: 30%;
+        position: absolute;
+    }
 `
 
 
@@ -33,6 +40,7 @@ const RedWrapper: React.FC<{children: React.ReactNode}> = ({children}) => {
     return <>
         <StyledRedWrapper>
             <StyledItem>
+                <img alt="logo" src={logo}></img>
                 {children}
             </StyledItem>
         </StyledRedWrapper>

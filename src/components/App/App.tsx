@@ -1,8 +1,11 @@
 import { useStore } from "effector-react"
 import { createGlobalStyle } from "styled-components"
 import { $currentPage } from "../../store/currentPage"
+import Carier from "../Carier/Carier"
+import FinalPage from "../FinalPage/FinalPage"
 import GamePage from "../GamePage/GamePage"
 import Kitchen from "../Kitchen/Kitchen"
+import LastCarier from "../LastCarier/LastCarier"
 import LoosePage from "../LoosePage/LoosePage"
 import MenuPage from "../MenuPage/MenuPage"
 import RecipePage from "../RecipePage/RecipePage"
@@ -29,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
 
 const App = () => {
     const currentPage = useStore($currentPage)
-    const pages = [<StartPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>]
+    const pages = [<StartPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>, <FinalPage/>, <LastCarier/>, <Carier/>]
 
 
     return (

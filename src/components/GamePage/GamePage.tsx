@@ -1,9 +1,9 @@
 import { useStore } from "effector-react"
 import { useEffect } from "react"
 import styled from "styled-components"
-import { $Foods, $Recipe, setCurrentPage } from "../../store/currentPage"
+import { $Foods, $Recipe, resetStats, setCurrentPage } from "../../store/currentPage"
 import { $drops, resetDrops } from "../../store/Drops"
-import { makeLevel } from "../../store/Levels"
+import { $levels, makeLevel } from "../../store/Levels"
 import Drop from "../Drop/Drop"
 import LoosePage from "../LoosePage/LoosePage"
 import PlayerEl from "../PlayerEl/PlayerEl"
@@ -126,6 +126,7 @@ const GamePage = () => {
     const {recipe, hearts, svitokCount} = useStore($Recipe)
     const pickedFood = useStore($Foods)
     const drops = useStore($drops)
+    const foods = useStore($levels)
 
 
     useEffect(() => {
@@ -143,8 +144,12 @@ const GamePage = () => {
     }
 
     if(isWin) {
+        resetStats()
         makeLevel(pickedFood)
-        setCurrentPage(6)
+        let isOld = 0
+        foods.forEach(food => { if(food.win) isOld += 1 })
+
+        setCurrentPage(isOld<3? 6 : 7)
     }
     if(hearts === 0) {setCurrentPage(5)}
 
