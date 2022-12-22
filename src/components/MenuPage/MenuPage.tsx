@@ -110,7 +110,9 @@ const MenuPage = () => {
         else setPickedFood(select)
     }
 
-    console.log(foods)
+    let isOld = false
+    foods.forEach(food => { if(food.win) isOld = true })
+
 
     return (
         <StyledMenuPage>
@@ -128,7 +130,7 @@ const MenuPage = () => {
                                 </FoodItem> : <></>
                 })}
             </FoodGroup>
-            {pickedFood !== -1? <Button id={2}>Далее</Button> : <></>}
+            {pickedFood !== -1? <Button id={isOld? 3 : 2}>Далее</Button> : <></>}
         </StyledMenuPage>
     )
 }

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { setCurrentPage } from "../../store/currentPage"
 import Button from "../Button/Button"
 import svitok from './svitok.png'
 
@@ -19,7 +18,7 @@ const StartPageWrapper = styled.div`
 const SvitokWrapper = styled.div`
     position: relative;
     width: 90%;
-    height: 70vh;
+    height: 455px;
     display: flex;
     flex-direction: column;
     align-items: center;

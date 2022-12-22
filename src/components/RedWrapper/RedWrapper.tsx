@@ -18,10 +18,10 @@ const StyledItem = styled.div`
     background: linear-gradient(146deg, rgba(1,83,79,1) 0%, rgba(0,117,111,1) 48%, rgba(0,72,69,1) 100%);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     p {
         font-family: 'calvinLight';
-        font-size: 18px;
+        font-size: 16px;
         color: #FFEDAF;
     }
 `
