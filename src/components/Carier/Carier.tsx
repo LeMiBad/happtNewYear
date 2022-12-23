@@ -114,23 +114,38 @@ const Carier = () => {
     const {svitokCount} = useStore($Recipe)
     const foods = useStore($levels)
 
-    let whereLevel = 0
+    let whereLevel = 3
     for(let i = 0; i < foods.length; i++) {
         if(foods[i].win) whereLevel+=1
     }
     
+
     let arr = first
     let maxSvit = svitokCount
     
+    if(whereLevel < 2) {
+        if(maxSvit < 3) maxSvit = 3
+        else if(svitokCount > 10) {
+            maxSvit = 10
+        }
+        else maxSvit = svitokCount
+    }
+
     if(whereLevel === 2) {
         arr = second
         if(svitokCount > 10) {
-            maxSvit = svitokCount
+            maxSvit = svitokCount - 10
         }
+        else if(svitokCount >= 20) {
+            maxSvit = 10
+        }
+
+        if(maxSvit < 3) maxSvit = 3 
     }
     else if (whereLevel === 3) {
         arr = all
         maxSvit = svitokCount
+        if(maxSvit < 3) maxSvit = 3
     }
 
     const inc = () => {
