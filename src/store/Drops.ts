@@ -76,6 +76,9 @@ const initialDrops = [
 
 
 export const resetDrops = createEvent()
+export const modalDrops = createEvent()
 export const $drops = createStore(initialDrops)
     .on(resetDrops, _ => [dropGenerator(0),dropGenerator(1),dropGenerator(2),])
+    .on(modalDrops, _ => [])
+
 

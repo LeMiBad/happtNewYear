@@ -12,7 +12,7 @@ const StyledBackground = styled.div`
     position: fixed;
     left: 0;
     top: 0;
-    background: radial-gradient(circle, rgb(11 255 241) 5%, rgb(51 84 53) 85%);
+    background: radial-gradient(circle, rgb(11 255 241) -16%, rgb(51 84 53) 85%);
 `
 
 const Gir = styled.img`
@@ -51,8 +51,8 @@ const LinkWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 24%;
-    right: 16%;
+    bottom: 10%;
+    left: calc(5% + 426px);
     color: white;
     h1 {
         font-family: 'book';
@@ -76,7 +76,7 @@ const Desktop = () => {
             <LinkWrapper>
                 <h1>Открывай игру с телефона</h1>
                 <p>Сканируй QR-код и переходи ловить ингредиенты!<br/> Псс.. в игре тебя ждут приятные карьерные послания от работодателей</p>
-                <img src="https://qrcod.ru/3aUR.svg" alt="1" width="200" height="200" />
+                <img src="https://qrcod.ru/3aV5.svg" alt="1" width="200" height="200" />
             </LinkWrapper>
         </StyledBackground>
     </>

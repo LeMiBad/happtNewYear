@@ -1,12 +1,15 @@
 import { useStore } from "effector-react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { $Foods, $Recipe, resetStats, setCurrentPage } from "../../store/currentPage"
-import { $drops, resetDrops } from "../../store/Drops"
+import { $drops, modalDrops, resetDrops } from "../../store/Drops"
 import { $levels, makeLevel } from "../../store/Levels"
+import Button from "../Button/Button"
 import Drop from "../Drop/Drop"
-import LoosePage from "../LoosePage/LoosePage"
 import PlayerEl from "../PlayerEl/PlayerEl"
+import RecipePage from "../RecipePage/RecipePage"
+import { StyledRules, StyledWrapper } from "../RulesPage/RulesPage"
+import RulesTable from "../RulesTable/RulesTable"
 import branch from './branch.png'
 
 
@@ -120,23 +123,37 @@ const FoodItem = styled.img<{isPicked: boolean}>`
     background-color: ${props => props.isPicked? 'rgba(0, 0, 0, 0.1)' : 'white'};
 `
 
+const Modal = styled.div`
+    z-index: 10000;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
+                        
 const GamePage = () => {
     const {recipe, hearts, svitokCount} = useStore($Recipe)
+    const [modal, setModal] = useState(<></>)
     const pickedFood = useStore($Foods)
     const drops = useStore($drops)
     const foods = useStore($levels)
-
+    
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            resetDrops()
-        }, drops[pickedFood][drops[pickedFood].length-1].time+100);
-    
-        return () => clearInterval(interval);
+        if(drops.length) {
+            const interval = setInterval(() => {
+                resetDrops()
+            }, drops[pickedFood][drops[pickedFood].length-1].time+100);
+        
+            return () => clearInterval(interval);
+        }
     }, [pickedFood, drops]);
-
 
     let isWin = true
     for(let i = 0; i < recipe[pickedFood].flat(1).length; i++) {
@@ -152,12 +169,41 @@ const GamePage = () => {
         setCurrentPage(isOld<3? 6 : 7)
     }
     if(hearts === 0) {setCurrentPage(5)}
+    
+    const CloseModal = () => {
+        resetDrops()
+        setModal(<></>)
+    }
+
+    const openRules = () => {
+        modalDrops()
+        setModal(<Modal onClick={CloseModal}>
+            <StyledWrapper padding={'35vh 0 15vh 0'}>
+                <RulesTable> </RulesTable>
+                    <StyledRules>Двигай эльфа влево-вправо в нижней части экрана чтобы собирать нужные ингредиенты из списка.</StyledRules>
+                    <StyledRules>Также не забывай собирать бумажки с посланиями!</StyledRules>
+                    <StyledRules>У тебя есть 3 жизни. Чтобы их не потерять, просто не лови лишние предметы.</StyledRules>
+                <div><Button id={4}>Хорошо</Button></div>
+            </StyledWrapper>
+        </Modal>)
+    }
+    
+    const openRecipe = () => {
+        modalDrops()
+        setModal(<Modal onClick={CloseModal}>
+                <RecipePage unButton/>
+            </Modal>)
+    }
+
 
     return (
         <StyledGamePage>
-            {drops[pickedFood].map(({url, left, top, time, id, type}) => {
-                return <Drop key={id} time={time} top={top} type={type} left={left} url={url}></Drop>
-            })}
+            {modal}
+            {
+                drops.length? drops[pickedFood].map(({url, left, top, time, id, type}) => {
+                    return <Drop key={id} time={time} top={top} type={type} left={left} url={url}></Drop>
+                }) : <></>
+            }
             <BranchWrapper>
                 <img src={branch} alt='branch'/>
                 <h1 style={{fontSize: allFoods[pickedFood] === 'Куриные рулетики'? '25px' : '45px',
@@ -166,14 +212,14 @@ const GamePage = () => {
                 </h1>
             </BranchWrapper>
             <RecipeList>
-                <ModalButton pad={20} h={50} deg={329} img='https://s3-alpha-sig.figma.com/img/fc99/cf21/3e025ea75f9b5b86d17c3e021963f1b2?Expires=1672012800&Signature=UNId7Q4B7UTZlbiDHN0SjlbZ5dpk4a8Tcz1mk5QRqccTmmi7uIA6-538VOZSBAab8RxFgAp~NAl~wHdM010ZfZd7Zb5lBwO5PfuOCddOoRpk8vw8sA1YQgpvHnJfVXh7Gp3f7vETPp-9cpsgvsV6Cky4ZXDcRTVC9Eb30yAFhajrpA3mB-XL-qgs16RpEow0d724kaREYQttBA-swnxZSEoM-lWYpeBbw7n3P931P3B5B4YTivQCiUNOkNonwsWAKMk9fSwkHzGgWLpOlQJ9ZZDYonGZVukcQqbGaiy4AE4YMKlHboNix0ZJUOLfCMDkCQkVU7Wz-68oy-icvsD0ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'>
+                <ModalButton onClick={openRecipe} pad={20} h={50} deg={329} img='https://s3-alpha-sig.figma.com/img/fc99/cf21/3e025ea75f9b5b86d17c3e021963f1b2?Expires=1672012800&Signature=UNId7Q4B7UTZlbiDHN0SjlbZ5dpk4a8Tcz1mk5QRqccTmmi7uIA6-538VOZSBAab8RxFgAp~NAl~wHdM010ZfZd7Zb5lBwO5PfuOCddOoRpk8vw8sA1YQgpvHnJfVXh7Gp3f7vETPp-9cpsgvsV6Cky4ZXDcRTVC9Eb30yAFhajrpA3mB-XL-qgs16RpEow0d724kaREYQttBA-swnxZSEoM-lWYpeBbw7n3P931P3B5B4YTivQCiUNOkNonwsWAKMk9fSwkHzGgWLpOlQJ9ZZDYonGZVukcQqbGaiy4AE4YMKlHboNix0ZJUOLfCMDkCQkVU7Wz-68oy-icvsD0ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'>
                     <div></div>
                     <p>Ингредиенты</p>
                 </ModalButton>
                 {recipe[pickedFood].flat(1).map((({url, isPicked}) => <FoodItem key={url} isPicked={isPicked} src={url} />))}
             </RecipeList>
             <GameVars>
-                <ModalButton pad={25} h={52} deg={0} img="https://s3-alpha-sig.figma.com/img/3b99/48fe/7c379f136d911ad6a786e3e0e2d89574?Expires=1672012800&Signature=XJyRy1fTss1VBHykyPn0mQPfkCzVy1GMUQqRp~7yVf4UUjhgtoMKIIVVXer1rL9mMmJxfs~dJUFxy7yeARpvcc72t18z6lyAktTHrBVepZPPXlvsnst0ti9AA43pi6NmonOYhsQrNesot0l5M8nwNKqtXASRe-rqGz9gH0bCb9wYPGuRUQEY75B0Kl5dccetrxe6gw8n1Oq1NpMjC~PLqCguY~4WqjlPlWpoNlJlieWb2ciEYzq5UEsqTgn~dXQbynZvmptBFwAZ7ialeECnbopm7LDhBZZgHC8KWDD~YxvpcrOTnQSGNW-R1Yppke1bxOq2SVh~g5jOuTjfX0aW9Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+                <ModalButton onClick={openRules} pad={25} h={52} deg={0} img="https://s3-alpha-sig.figma.com/img/3b99/48fe/7c379f136d911ad6a786e3e0e2d89574?Expires=1672012800&Signature=XJyRy1fTss1VBHykyPn0mQPfkCzVy1GMUQqRp~7yVf4UUjhgtoMKIIVVXer1rL9mMmJxfs~dJUFxy7yeARpvcc72t18z6lyAktTHrBVepZPPXlvsnst0ti9AA43pi6NmonOYhsQrNesot0l5M8nwNKqtXASRe-rqGz9gH0bCb9wYPGuRUQEY75B0Kl5dccetrxe6gw8n1Oq1NpMjC~PLqCguY~4WqjlPlWpoNlJlieWb2ciEYzq5UEsqTgn~dXQbynZvmptBFwAZ7ialeECnbopm7LDhBZZgHC8KWDD~YxvpcrOTnQSGNW-R1Yppke1bxOq2SVh~g5jOuTjfX0aW9Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
                     <div></div>
                     <p>Правила</p>
                 </ModalButton>

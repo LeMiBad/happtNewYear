@@ -87,7 +87,7 @@ const FoodItemWrapper = styled.div`
 
 const allFoods = ['Оливье', 'Куриные рулетики', 'Глинтвейн']
 
-const RecipePage = () => {
+const RecipePage: React.FC<{unButton?: boolean}> = ({unButton}) => {
     const {recipe} = useStore($Recipe)
     const pickedFood = useStore($Foods)
 
@@ -110,7 +110,7 @@ const RecipePage = () => {
                     })}
                 </FoodWrapper>
             </SvitokWrapper>
-            <Button id={4}>Далее</Button>
+            {unButton? <></> : <Button id={4}>Далее</Button>}
             
         </StartPageWrapper>
     )

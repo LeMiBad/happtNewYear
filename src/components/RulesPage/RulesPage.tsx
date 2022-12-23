@@ -19,7 +19,7 @@ export const StyledWrapper = styled.div<{padding?: string}>`
     background-color: rgba(0, 0, 0, 0.541);
 `
 
-const StyledRules = styled.div`
+export const StyledRules = styled.div`
     font-family: 'calvin';
     width: 70%;
     font-size: 14px;
