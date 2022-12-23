@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import snowflakes from './../../icons/snowflakes.png'
+import light from './light.png'
 
 
 const Floor = styled.div`
@@ -26,6 +27,7 @@ const Tree = styled.div`
 
 const Snowflakes = styled.img<{top?: boolean}>`
     position: absolute;
+    z-index: -10;
     width: 166%;
     ${props => props.top? 'top: -34vw;' : 'bottom: 0;'}
     ${props => props.top? 'transform: rotate(180deg) scale(0.6);' : 'transform: scale(0.6);'}
@@ -37,6 +39,7 @@ const Kitchen = () => {
     return <>
         <Snowflakes top src={snowflakes}/>
         <Snowflakes src={snowflakes}/>
+        <img alt="light" src={light}></img>
         <Floor />
         <Tree />
     </>

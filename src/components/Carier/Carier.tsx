@@ -2,7 +2,7 @@ import { useStore } from "effector-react"
 import { useState } from "react"
 import styled from "styled-components"
 import { $carier } from "../../store/Carier"
-import { setCurrentPage } from "../../store/currentPage"
+import { $Recipe, setCurrentPage } from "../../store/currentPage"
 import { $levels } from "../../store/Levels"
 import Button from "../Button/Button"
 import lenta from './../../icons/lenta.png'
@@ -111,23 +111,33 @@ const Nav = styled.div`
 const Carier = () => {
     const [counter, setCounter] = useState(0)
     const {first, second, all} = useStore($carier)
+    const {svitokCount} = useStore($Recipe)
     const foods = useStore($levels)
 
     let whereLevel = 0
-
     for(let i = 0; i < foods.length; i++) {
         if(foods[i].win) whereLevel+=1
     }
     
     let arr = first
+    let maxSvit = svitokCount
     
-    if(whereLevel === 2) arr = second
-    else if (whereLevel === 3) arr = all
+    if(whereLevel === 2) {
+        arr = second
+        if(svitokCount > 10) {
+            maxSvit = svitokCount
+        }
+    }
+    else if (whereLevel === 3) {
+        arr = all
+        maxSvit = svitokCount
+    }
 
     const inc = () => {
-        if(counter === arr.length-1) return
+        if(counter === maxSvit-1) return
         setCounter(counter+1)
     }
+
     const dec = () => {
         if(counter === 0) return
         setCounter(counter-1)
@@ -148,7 +158,7 @@ const Carier = () => {
             <Nav>
                 <div className="arrows">
                     <div onClick={dec}><Arrow left></Arrow></div>
-                    <p>{counter+1}/{arr.length}</p>
+                    <p>{counter+1}/{maxSvit}</p>
                     <div onClick={inc}><Arrow></Arrow></div>
                 </div>
                 {(whereLevel === 3)? null : <div onClick={crossHandler}><Cross/></div>}
