@@ -12,7 +12,7 @@ const StyledGamePage = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 25px;
+    gap: 45px;
     height: 100vh;
     padding: 0 2%;
 `
