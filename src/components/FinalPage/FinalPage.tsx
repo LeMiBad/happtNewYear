@@ -4,7 +4,6 @@ import { setCurrentPage } from "../../store/currentPage"
 import Button from "../Button/Button"
 import RedWrapper from "../RedWrapper/RedWrapper"
 import lenta from './../../icons/lenta.png'
-import branch from './../MenuPage/branch.png'
 
 
 const StyledGamePage = styled.div`
@@ -26,6 +25,10 @@ const BranchWrapper = styled.div`
     width: 100vw;
     margin-top: 4vh;
     margin-bottom: 6vh;
+    @media (max-height: 700px) {
+        margin-top: 1vh !important;
+        margin-bottom: 2vh !important;
+    }
     .back {
         position: absolute;
         left: 0;
@@ -200,7 +203,7 @@ const FinalPage = () => {
                 </InputNumber>
                 <Politick isClick={isClick}>
                     <div onClick={clickHandler}></div>
-                    <p>Я согласен на <span>обработку персональных данных</span> и получение информационных сообщений</p>
+                    <p>Я согласен на <span><a style={{color: 'white', textDecoration: 'none'}} href="https://fut.ru/personal_data_policy/">обработку персональных данных</a></span> и получение информационных сообщений</p>
                 </Politick>
             </div>
             <ButtonWrapper isClick={isClick}>
