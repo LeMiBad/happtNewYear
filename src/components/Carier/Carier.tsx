@@ -136,7 +136,7 @@ const Carier = () => {
 
     if(whereLevel === 2) {
         arr = second
-        if(svitokCount > 10) {
+        if(svitokCount > 10 && svitokCount < 21) {
             maxSvit = svitokCount - 10
         }
         else if(svitokCount >= 20) {
