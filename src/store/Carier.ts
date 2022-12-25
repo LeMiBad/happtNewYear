@@ -51,7 +51,7 @@ const all = [
     },
     {
         text: ['Делись своими мыслями и идеями, какая-то из них обязательно изменит мир к лучшему!'],
-        author: 'Lindstrom',
+        author: 'Lindström',
         url: 'https://fut.ru/programs/lindstrom-internship/'
     },
     {
@@ -61,7 +61,7 @@ const all = [
     },
     {
         text: ['В 2023 году тебя ждут тысячи лайков, просмотров и репостов! А мы будем работать над тем, чтобы вирусными в сети были только твои посты (ну, и мемы!)'],
-        author: 'Лаборатория Касперского',
+        author: '«Лаборатория Касперского»',
         url: 'https://fut.ru/programs/labkaspersky/'
     },
     {
@@ -76,7 +76,7 @@ const all = [
     },
     {
         text: ['В новом году ты научишься решать задачи любой сложности. Подумай, может, работа на стыке IT и права — это твое?'],
-        author: 'Консультант Плюс',
+        author: '«Консультант Плюс»',
         url: 'https://fut.ru/programs/konsultant-pljus/'
     },
     {
@@ -131,7 +131,7 @@ const all = [
     },
     {
         text: ['Хочешь найти новый путь — прямо сейчас сойди со старой дороги!'],
-        author: 'ГазпромнефтьЦР',
+        author: 'Газпромнефть–ЦР',
         url: 'https://fut.ru/programs/gazpromneft-cr/'
     },
     {
@@ -156,7 +156,7 @@ const all = [
     },
     {
         text: ['Не важно, гуманитарий ты или технарь — в новом году твой потенциал будет реализован на 100%!'], 
-        author: 'Норникель',
+        author: '«Норникель»',
         url: 'https://fut.ru/programs/nornikel_internship/'
     },
 ]
@@ -206,7 +206,7 @@ const initialCarier = {
         },
         {
             text: ['Делись своими мыслями и идеями, какая-то из них обязательно изменит мир к лучшему!'],
-            author: 'Lindstrom',
+            author: 'Lindström',
             url: 'https://fut.ru/programs/lindstrom-internship/'
         },
         {
@@ -233,7 +233,7 @@ const initialCarier = {
         },
         {
             text: ['В новом году ты научишься решать задачи любой сложности. Подумай, может, работа на стыке IT и права — это твое?'],
-            author: 'Консультант Плюс',
+            author: '«Консультант Плюс»',
             url: 'https://fut.ru/programs/konsultant-pljus/'
         },
         {

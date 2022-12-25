@@ -26,6 +26,7 @@ export const StyledRules = styled.div`
     color: white;
     text-align: inherit;
     span{
+        font-family: 'calvin';
         color: #F4DF98;
     }
 `

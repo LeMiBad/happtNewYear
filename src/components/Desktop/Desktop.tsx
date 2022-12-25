@@ -29,7 +29,7 @@ const Man = styled.img`
 `
 const Logo = styled.img`
     position: absolute;
-    width: 175px;
+    width: 284px;
     top: 8%;
     left: 5%;
 `
@@ -40,27 +40,23 @@ const Vetka = styled.img`
     right: 0;
 `
 
-const Snow = styled.img`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-`
 
 const LinkWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 10%;
-    left: calc(5% + 426px);
+    bottom: 16%;
+    left: calc(8% + 426px);
     color: white;
     h1 {
         font-family: 'book';
-        font-size: 40px;
+        font-size: 45px;
+        margin-left: 8px;
     }
     p {
         font-family: 'calvin';
         font-size: 20px;
+        margin-left: 22px;
     }
 `
 
@@ -71,12 +67,13 @@ const Desktop = () => {
             <Gir alt="Гирлянда" src={gir}></Gir>
             <Gir style={{height: '100vh'}} alt="Cвет" src={light}></Gir>
             <Vetka alt='vetka' src={vetka}></Vetka>
-            {/* <Snow src={snow} /> */}
             <Logo alt="logo" src={logo}></Logo>
             <LinkWrapper>
-                <h1>Открывай игру с телефона</h1>
-                <p>Сканируй QR-код и переходи ловить ингредиенты!<br/> Псс.. в игре тебя ждут приятные карьерные послания от работодателей</p>
-                <img src="https://qrcod.ru/3aV5.svg" alt="1" width="200" height="200" />
+                <h1>ОТКРЫВАЙ ИГРУ С ТЕЛЕФОНА</h1>
+                <p>Сканируй QR-код и переходи ловить ингредиенты!<br/> Псс.. в игре тебя ждут приятные карьерные послания <br/>от работодателей</p>
+                <div>
+                    <img alt="qr-код" src="https://qrcod.ru/3b4M.svg" width="250" height="250" />
+                </div>
             </LinkWrapper>
         </StyledBackground>
     </>
