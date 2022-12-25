@@ -114,11 +114,11 @@ const Carier = () => {
     const {svitokCount} = useStore($Recipe)
     const foods = useStore($levels)
 
-    let whereLevel = 3
+    let whereLevel = 0
     for(let i = 0; i < foods.length; i++) {
         if(foods[i].win) whereLevel+=1
     }
-    
+
 
     let arr = first
     let maxSvit = svitokCount
@@ -162,6 +162,8 @@ const Carier = () => {
         setCurrentPage(1)
     }
 
+    console.log(whereLevel)
+
     return <>
         <StyledGamePage>
             <BranchWrapper>
@@ -185,9 +187,12 @@ const Carier = () => {
                 </div>
                 <Author>{arr[counter].author}</Author>
             </Svitok>
-            <a style={{textDecoration: 'none', zIndex: 3000}} target={'blank'} href={'*'}><Button id={9}>Узнать больше</Button></a>
+            <div onClick={() => {ym(91822706,'reachGoal','click')}}><a style={{textDecoration: 'none', zIndex: 3000}} target={'blank'} href={arr[counter].url}><Button id={9}>Узнать больше</Button></a></div>
         </StyledGamePage>
     </>
 }
 
 export default Carier
+
+function ym(arg0: number, arg1: string, arg2: string) {
+}

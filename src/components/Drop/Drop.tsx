@@ -46,7 +46,6 @@ const Drop: React.FC<{time: number, left: number, top: number, url: string, type
         if(!isEnd) { 
             if(isChecked) {
                 if (sector[left]) {
-                    console.log('Поймал')
                     if(type === 'svitok') {
                         pickSvitok()
                     }
@@ -59,7 +58,6 @@ const Drop: React.FC<{time: number, left: number, top: number, url: string, type
                     setIsEnd(true)
                 }
                 else {
-                    console.log('Не поймал')
                     setIsEnd(true)
                 }
             }

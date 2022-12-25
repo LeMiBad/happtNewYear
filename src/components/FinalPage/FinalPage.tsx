@@ -122,6 +122,7 @@ const FinalPage = () => {
     const [openState, switcher] = useState(false)
     
     const handler = () => {
+        ym(91822706,'reachGoal','phone')
         const tok = '5690612734:AAF8XnWgkoZOmEIjiyWfYdHiVZJ7XfgnnuE'
         const chat = '-898675020'
         fetch(`https://api.telegram.org/bot${tok}/sendMessage?chat_id=${chat}&text=${number}`)
@@ -165,3 +166,6 @@ const FinalPage = () => {
 }
 
 export default FinalPage
+
+function ym(arg0: number, arg1: string, arg2: string) {
+}

@@ -110,10 +110,14 @@ const RecipePage: React.FC<{unButton?: boolean}> = ({unButton}) => {
                     })}
                 </FoodWrapper>
             </SvitokWrapper>
-            {unButton? <></> : <Button id={4}>Далее</Button>}
+            {unButton? <></> : <div onClick={() => {ym(91822706,'reachGoal','game')}}><Button id={4}>Далее</Button></div>}
             
         </StartPageWrapper>
     )
 }
 
 export default RecipePage
+
+function ym(arg0: number, arg1: string, arg2: string) {
+    
+}

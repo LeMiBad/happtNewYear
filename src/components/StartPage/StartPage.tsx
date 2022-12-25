@@ -68,7 +68,6 @@ const SvitokWrapper = styled.div`
 
 
 
-
 const StartPage = () => {
     return (
         <StartPageWrapper>
@@ -82,9 +81,14 @@ const StartPage = () => {
                     <p>Приготовь все 3 блюда и собери 30 посланий – самые активные игроки получат новогодние подарки от Санты FutureToday!</p>
                 </div>
             </SvitokWrapper>
-            <Button id={1}>Далее</Button>
+            <div onClick={() => {ym(91822706,'reachGoal','start')}}>
+                <Button id={1}>Далее</Button>
+            </div>
         </StartPageWrapper>
     )
 }
 
 export default StartPage
+
+function ym(arg0: number, arg1: string, arg2: string) {
+}

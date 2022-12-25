@@ -51,10 +51,15 @@ const LastCarier = () => {
             <Text>Карьеру никто не отменял! Внимательно прочитай все послания от компаний.</Text>
             <Text>Работодатели будут ждать тебя в новом 2023 ;)</Text>
             <ButtonWrapper>
-                <Button id={9}>Карьерные послания</Button>
+                <div onClick={() => {ym(91822706,'reachGoal','letters')}}>
+                    <Button id={9}>Карьерные послания</Button>
+                </div>
             </ButtonWrapper>
         </StyledGamePage>
     </>
 }
 
 export default LastCarier
+
+function ym(arg0: number, arg1: string, arg2: string) {
+}

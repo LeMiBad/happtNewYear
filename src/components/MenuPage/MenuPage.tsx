@@ -130,9 +130,12 @@ const MenuPage = () => {
                                 </FoodItem> : null
                 })}
             </FoodGroup>
-            {pickedFood !== -1? <Button id={isOld? 3 : 2}>Далее</Button> : <></>}
+            {pickedFood !== -1? <div onClick={() => {ym(91822706,'reachGoal','meal')}}><Button id={isOld? 3 : 2}>Далее</Button></div> : <></>}
         </StyledMenuPage>
     )
 }
 
 export default MenuPage
+
+function ym(arg0: number, arg1: string, arg2: string) {
+}
