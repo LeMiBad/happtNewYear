@@ -23,7 +23,7 @@ const StyledGamePage = styled.div`
 const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
-    margin-bottom: 9vh;
+    margin-bottom: 3vh;
     @media (min-height: 700px) {
         margin-top: 4vh !important;
     }
