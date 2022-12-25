@@ -190,7 +190,7 @@ const GamePage = () => {
         setModal(<Modal onClick={CloseModal}>
             <StyledWrapper padding={'35vh 0 15vh 0'}>
                 <RulesTable> </RulesTable>
-                    <StyledRules>Двигай эльфа влево-вправо в нижней части экрана чтобы собирать нужные ингредиенты из списка.</StyledRules>
+                    <StyledRules>Двигай эльфа влево-вправо в нижней части экрана, чтобы собирать нужные ингредиенты из списка.</StyledRules>
                     <StyledRules>Также не забывай собирать бумажки с посланиями!</StyledRules>
                     <StyledRules>У тебя есть 3 жизни. Чтобы их не потерять, просто не лови лишние предметы.</StyledRules>
                 <div><Button id={4}>Хорошо</Button></div>

@@ -28,7 +28,7 @@ const StyledGamePage = styled.div`
 const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     @media (min-height: 700px) {
         margin-top: 6vh !important;
     }
@@ -168,7 +168,6 @@ const Carier = () => {
         setCurrentPage(1)
     }
 
-    console.log(whereLevel)
 
     return <>
         <StyledGamePage>
