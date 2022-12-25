@@ -37,7 +37,10 @@
         const doc = document.documentElement
         doc.style.setProperty('--max-height-app', `calc(${window.innerHeight}px)`);
     }
-    appHeight()
+
+    setInterval(() => {
+      appHeight()
+    }, 500)
   </script>
 </body>
 

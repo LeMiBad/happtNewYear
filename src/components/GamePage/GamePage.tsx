@@ -192,6 +192,7 @@ const GamePage = () => {
         modalDrops()
         setModal(<Modal onClick={CloseModal}>
                 <RecipePage unButton/>
+                <div style={{marginTop: '54vh', zIndex: 100}}><Button id={1}>Понятно</Button></div>
             </Modal>)
     }
 

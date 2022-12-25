@@ -111,17 +111,18 @@ const Nav = styled.div`
 const Carier = () => {
     const [counter, setCounter] = useState(0)
     const {first, second, all} = useStore($carier)
-    const {svitokCount} = useStore($Recipe)
+    // const {svitokCount} = useStore($Recipe)
+    const svitokCount = 30
     const foods = useStore($levels)
 
-    let whereLevel = 0
+    let whereLevel = 3
     for(let i = 0; i < foods.length; i++) {
         if(foods[i].win) whereLevel+=1
     }
 
 
     let arr = first
-    let maxSvit = svitokCount
+    let maxSvit = 30
     
     if(whereLevel < 2) {
         if(maxSvit < 3) maxSvit = 3
