@@ -42,11 +42,15 @@ const BranchWrapper = styled.div`
 
     h1 {
         z-index: 10;
-        width: 50%;
+        width: 100%;
+        height: 85px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3400;
         text-align: center;
         color: white;
         text-align: center;
-        position: absolute;
         font-family: 'book';
         font-weight: 400;
         left: 25%;
@@ -178,10 +182,10 @@ const FinalPage = () => {
         </Modal> : <></>}
         <StyledGamePage>
             <BranchWrapper>
-                <img className="back" src={lenta} alt='lenta'/>
-                <h1 style={{fontSize: '34px', top: '5px'}}>
+                <img style={{zIndex: -1}} className="back" src={lenta} alt='lenta'/>
+                <div style={{zIndex: 1000}}><h1 style={{fontSize: '34px', top: '5px'}}>
                     Прошу к столу
-                </h1>
+                </h1></div>
             </BranchWrapper>
             <RedWrapper>
                 <p>Всё накрыто, гости уже начали уплетать таз с оливье и горячий глинтвейн 🔥</p>
