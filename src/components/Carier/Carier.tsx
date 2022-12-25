@@ -28,7 +28,7 @@ const StyledGamePage = styled.div`
 const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
-    margin-bottom: 10vh;
+    margin-bottom: 50px;
     @media (min-height: 700px) {
         margin-top: 6vh !important;
     }
@@ -42,6 +42,7 @@ const BranchWrapper = styled.div`
     h1 {
         z-index: 10;
         width: 100%;
+        margin-top: 10px;
         height: 85px;
         display: flex;
         justify-content: center;
@@ -174,7 +175,7 @@ const Carier = () => {
             <BranchWrapper>
                 <img style={{zIndex: -1}} src={lenta} alt='lenta'/>
                 <h1 style={{fontSize: '34px', top: '5px'}}>
-                    Карьерные послания
+                    Карьерные <br/> послания
                 </h1>
             </BranchWrapper>
             <Nav>
