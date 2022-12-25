@@ -8,7 +8,7 @@ import snow from './snow.png'
 
 const StyledBackground = styled.div`
     width: 100%;
-    height: 100vh;
+    height: var(--max-height-app);
     position: fixed;
     left: 0;
     top: 0;
@@ -65,7 +65,7 @@ const Desktop = () => {
         <StyledBackground>
             <Man alt="man" src="https://s3-alpha-sig.figma.com/img/0565/3565/30de1a3dd5ad5d9b733f53cfabeb6db1?Expires=1672617600&Signature=nDL8veVqOCFdjd~1E15h-6y2RszRFHdR74kv6v9RDVdoI2SxXS~OWrWggBFJ0v6Ttxyplph4Sfq6aYy8xN1O0ZSv6QcbdgS6jiXqRkYLIRyS9VEc0CQ~90eoXDtY0OtCQTQB0lmYcU2thYXNyySsJdsFmyvVEaFwZ3W2V0Q4xcPnLN3fAQYAO4jmYdr3exPlVVtyAquaxKZMLaiPRwRixgVKiMI5CCywzVLcxHWfYZn9xt9OMslWaqQJsr1vsdYNGvuQljAK2tI49avbG71jeUl84y3p-OhzkhDpNt9OSNOwg1t3J-LMBg45mGaXCT~MQf~tfHtB5gXWBIy~rf1qmw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"></Man>
             <Gir alt="Гирлянда" src={gir}></Gir>
-            <Gir style={{height: '100vh'}} alt="Cвет" src={light}></Gir>
+            <Gir style={{height: 'var(--max-height-app)'}} alt="Cвет" src={light}></Gir>
             <Vetka alt='vetka' src={vetka}></Vetka>
             <Logo alt="logo" src={logo}></Logo>
             <LinkWrapper>

@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         width: 100%;
-        height: 100vh;
+        height: var(--max-height-app);
         position: relative;
         background: radial-gradient(circle, rgba(3,160,151,1) 5%, rgba(32,52,33,1) 85%);
         overflow: hidden;
@@ -37,7 +37,6 @@ const App = () => {
     const pages = [<StartPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>, <FinalPage/>, <LastCarier/>, <Carier/>]
 
 
-    
     if(window.innerHeight < window.innerWidth) return <Desktop/>
 
 

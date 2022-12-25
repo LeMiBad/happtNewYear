@@ -62,7 +62,7 @@ const dropGenerator = (id: number) => {
             time: time,
             url: randomFood 
         })
-        time+=1400
+        time+=1900
         top+=100
     }
     return dropArray

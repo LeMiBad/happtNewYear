@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import sugrob from './sugrob.png'
 import man from './man.png'
 import Button from "../Button/Button"
 
@@ -46,8 +45,7 @@ const LastCarier = () => {
     return <>
         <StyledGamePage>
             <div style={{height: '45vh', width: 100}}/>
-            <ImgEl top={25} z={1} src={sugrob}/>
-            <ImgEl top={0} z={2} src={man}/>
+            <ImgEl style={{width: '50%', marginTop: "8vh"}} top={0} z={2} src={man}/>
             <Text>Карьеру никто не отменял! Внимательно прочитай все послания от компаний.</Text>
             <Text>Работодатели будут ждать тебя в новом 2023 ;)</Text>
             <ButtonWrapper>

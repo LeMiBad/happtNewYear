@@ -20,7 +20,7 @@ const StyledMenuPage = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: var(--max-height-app);
     padding: 0 17%;
     p {
         width: 100%;

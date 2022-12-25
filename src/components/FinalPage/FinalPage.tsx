@@ -17,7 +17,7 @@ const StyledGamePage = styled.div`
     align-items: center;
     width: 100%;
     gap: 25px;
-    height: 100vh;
+    height: var(--max-height-app);
     padding: 0 2%;
 `
 
@@ -95,7 +95,7 @@ const Modal = styled.div`
     position: fixed;
     z-index: 300;
     width: 100%;
-    height: 100vh;
+    height: var(--max-height-app);
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;

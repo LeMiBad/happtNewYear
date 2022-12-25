@@ -19,7 +19,7 @@ const StyledGamePage = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 100vh;
+    height: var(--max-height-app);
     padding: 0 17%;
     button {
         min-width: 257px;
