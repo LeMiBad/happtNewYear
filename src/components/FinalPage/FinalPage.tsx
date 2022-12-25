@@ -24,7 +24,8 @@ const StyledGamePage = styled.div`
 const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
-    margin-bottom: 16vh;
+    margin-top: 4vh;
+    margin-bottom: 6vh;
     .back {
         position: absolute;
         left: 0;
