@@ -82,13 +82,16 @@ const BranchWrapper = styled.div`
     h1 {
         z-index: 10;
         color: white;
+        width: 100%;
         text-shadow: 2px 2px 0px #541f00;
         position: absolute;
         font-family: 'book';
         font-weight: 400;
         font-size: 55px;
-        left: 60px;
         top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `
 

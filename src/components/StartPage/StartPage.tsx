@@ -13,6 +13,9 @@ const StartPageWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-height: 700px) {
+        justify-content: center !important;
+    }
 `
 
 const SvitokWrapper = styled.div`
@@ -47,7 +50,7 @@ const SvitokWrapper = styled.div`
     }
 
     h1:nth-child(2) {
-        margin-top: 0;
+        margin-top: 2px;
         margin-bottom: 10px;
         text-align: center;
         font-size: 24px;

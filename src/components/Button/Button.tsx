@@ -12,7 +12,7 @@ const ButtonWrapper = styled.div`
 `
 const StyledButton = styled.button`
     font-family: 'book';
-    font-size: 32px;
+    font-size: 30px;
     padding: 10px 50px;
     box-sizing: border-box;
     border: 0;

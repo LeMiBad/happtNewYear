@@ -56,7 +56,9 @@ const BranchWrapper = styled.div`
 
 const InputNumber = styled.div`
     position: relative;
+    width: 90%;
     input {
+        width: 93%;
         padding: 20px 10px 10px 10px;
         border-radius: 10px;
         border: 0;
@@ -73,7 +75,7 @@ const InputNumber = styled.div`
     }
 `
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled.div<{isClick: boolean}>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +84,10 @@ const ButtonWrapper = styled.div`
         color: white;
         text-decoration: underline;
         font-size: 20px;
+    }
+
+    button {
+        ${props => props.isClick? 'opacity: 0.5;' : ''}
     }
 `
 
@@ -115,24 +121,55 @@ const Modal = styled.div`
     }
 `
 
+const Politick = styled.div<{isClick: boolean}>`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    gap: 10px;
+    div {
+        ${props => !props.isClick? 'background-color: red;' : ''}
+        min-height: 30px;
+        min-width: 30px;
+        border-radius: 10px;
+        border: 2px solid white;
+    }
+    p {
+        font-size: 12px;
+        color: white;
+        max-height: 30px;
+        min-width: 280px;
+        span {
+            text-decoration: underline;
+        }
+    }
+`
 
 
 const FinalPage = () => {
-    const [number, setNumber] = useState('+')
+    const [number, setNumber] = useState('')
     const [openState, switcher] = useState(false)
+    const [isClick, setIsClick] = useState(true)
     
     const handler = () => {
         ym(91822706,'reachGoal','phone')
-        const tok = '5690612734:AAF8XnWgkoZOmEIjiyWfYdHiVZJ7XfgnnuE'
-        const chat = '-898675020'
-        fetch(`https://api.telegram.org/bot${tok}/sendMessage?chat_id=${chat}&text=${number}`)
-        switcher(true)
-        setTimeout(() => {
-            setCurrentPage(8)
-        }, 1000)
+        if(!isClick) {
+            const tok = '5690612734:AAF8XnWgkoZOmEIjiyWfYdHiVZJ7XfgnnuE'
+            const chat = '-898675020'
+            fetch(`https://api.telegram.org/bot${tok}/sendMessage?chat_id=${chat}&text=${number}`)
+            switcher(true)
+            setTimeout(() => {
+                setCurrentPage(8)
+            }, 1000)
+        }
     }
     const noHandler = () => {
         setCurrentPage(8)
+    }
+
+    const clickHandler = () => {
+        if(isClick && number.length) setIsClick(false)
+        else setIsClick(true)
     }
 
     return <>
@@ -149,15 +186,19 @@ const FinalPage = () => {
                 </h1>
             </BranchWrapper>
             <RedWrapper>
-                <p>Всё накрыто, гости уже начали уплетать таз с оливье. Но больше всего они нахваливают горячий глинтвейн 🔥</p>
+                <p>Всё накрыто, гости уже начали уплетать таз с оливье и горячий глинтвейн 🔥</p>
                 <p>Ты прекрасно справился с не менее горячей задачей.</p>
-                <p>Участвуй в розыгрыше набора для глинтвейна! 9 января FutureToday выберет 5 счастливчиков. Оставляй свой номер ниже и готовь дома кастрюлю для багрового напитка!</p>
+                <p>Участвуй в розыгрыше набора для глинтвейна! 10 января FutureToday выберет 5 счастливчиков. Оставляй свой номер ниже и участвуй!</p>
             </RedWrapper>
             <InputNumber>
                 <input type={'number'} value={number} onChange={e => setNumber(e.currentTarget.value)}/>
                 <p>Номер телефона</p>
             </InputNumber>
-            <ButtonWrapper>
+            <Politick isClick={isClick}>
+                <div onClick={clickHandler}></div>
+                <p>Я согласен на <span>обработку персональных данных</span> и получение информационных сообщений</p>
+            </Politick>
+            <ButtonWrapper isClick={isClick}>
                 <div onClick={handler}><Button id={7}>Отправить</Button></div>
                 <p onClick={noHandler}>Не отправлять</p>
             </ButtonWrapper>
