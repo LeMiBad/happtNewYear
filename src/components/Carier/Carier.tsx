@@ -29,7 +29,7 @@ const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
     margin-bottom: 16vh;
-    margin-top: 5vh;
+    margin-top: 12vh;
     img {
         position: absolute;
         left: 0;
