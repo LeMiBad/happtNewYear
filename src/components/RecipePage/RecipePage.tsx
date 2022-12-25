@@ -50,7 +50,7 @@ const SvitokWrapper = styled.div`
         color: #5E401E;
         z-index: 11;
         font-weight: 400;
-        margin-top: 15%;
+        margin-top: 12%;
         font-family: 'book';
     }
 `
