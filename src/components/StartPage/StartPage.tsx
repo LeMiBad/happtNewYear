@@ -9,7 +9,7 @@ const StartPageWrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.35);
     box-sizing: border-box;
     width: 100%;
-    height: var(--max-height-app);
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

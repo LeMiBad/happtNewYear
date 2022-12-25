@@ -2,7 +2,7 @@ import { useStore } from "effector-react"
 import { useState } from "react"
 import styled from "styled-components"
 import { $carier } from "../../store/Carier"
-import { $Recipe, setCurrentPage } from "../../store/currentPage"
+import { setCurrentPage } from "../../store/currentPage"
 import { $levels } from "../../store/Levels"
 import Button from "../Button/Button"
 import lenta from './../../icons/lenta.png'
@@ -21,7 +21,7 @@ const StyledGamePage = styled.div`
     align-items: center;
     width: 100%;
     gap: 15px;
-    height: var(--max-height-app);
+    height: 100%;
     padding: 0 2%;
 `
 

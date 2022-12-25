@@ -15,7 +15,7 @@ const StyledGamePage = styled.div`
     align-items: center;
     width: 100%;
     gap: 15px;
-    height: var(--max-height-app);
+    height: 100%;
     padding: 0 2%;
 `
 

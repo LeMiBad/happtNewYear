@@ -9,7 +9,7 @@ export const StyledWrapper = styled.div<{padding?: string}>`
     z-index: 10;
     position: absolute;
     width: 100%;
-    height: var(--max-height-app);
+    height: 100%;
     box-sizing: border-box;
     ${props => props.padding? `padding: ${props.padding};` : ''};
     display: flex;
