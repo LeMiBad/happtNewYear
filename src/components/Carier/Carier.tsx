@@ -187,7 +187,7 @@ const Carier = () => {
                 </div>
                 <Author>{arr[counter].author}</Author>
             </Svitok>
-            <div onClick={() => {ym(91822706,'reachGoal','click')}}><a style={{textDecoration: 'none', zIndex: 3000}} target={'blank'} href={arr[counter].url}><Button id={9}>Узнать больше</Button></a></div>
+            <div style={{zIndex: 3000}} onClick={() => {ym(91822706,'reachGoal','click')}}><a style={{textDecoration: 'none'}} target={'blank'} href={arr[counter].url}><Button id={9}>Узнать больше</Button></a></div>
         </StyledGamePage>
     </>
 }
