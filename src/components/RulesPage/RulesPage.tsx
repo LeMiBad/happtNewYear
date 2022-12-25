@@ -21,7 +21,7 @@ export const StyledWrapper = styled.div<{padding?: string}>`
 
 export const StyledRules = styled.div`
     font-family: 'calvin';
-    width: 70%;
+    width: 80%;
     font-size: 14px;
     color: white;
     text-align: inherit;
@@ -35,7 +35,7 @@ export const StyledRules = styled.div`
 const RulesPage = () => {
     const [rule, setRule] = useState(0)
     const rulesArr = [<StyledRules>Сейчас тебе будет показан <span>список ингредиентов</span>, необходимых для готовки. Когда начнёшь игру, на тебя сверху будет падать множество продуктов. Тебе надо ловить <span>только те, что есть в списке.</span> Рецепт можно снова открыть в ходе игры или смотреть на подсказки на экране.</StyledRules>,
-                        <StyledRules>Чтобы поймать нужные ингредиенты, <span>двигай</span> своего персонажа <span>пальцем по нижней части экрана.</span> Не пропускай <span>свёрнутые бумажки!</span> В них полезные карьерные послания на грядущий год :)Ясное дело, ты суетишься! Поэтому тебе дано 3 права на ошибку. Пропускать нужные продукты можно.</StyledRules>]
+                        <StyledRules>Чтобы поймать нужные ингредиенты, <span>двигай</span> своего персонажа <span>пальцем по нижней части экрана.</span> <br/><br/>Не пропускай <span>свёрнутые бумажки!</span> В них полезные карьерные послания на грядущий год :)<br/><br/>Ясное дело, ты суетишься! Поэтому тебе дано 3 права на ошибку. Пропускать нужные продукты можно.</StyledRules>]
 
     const buttonHandler = () => {
         if(rule === 0) setRule(1)

@@ -26,6 +26,11 @@ const SvitokWrapper = styled.div`
     align-items: center;
     margin-bottom: 70px;
 
+    @media (min-height: 700px) {
+        justify-content: center !important;
+        margin-bottom: 0px !important;
+    }
+
     .svitok {
         position: absolute;
         width: 100%;
