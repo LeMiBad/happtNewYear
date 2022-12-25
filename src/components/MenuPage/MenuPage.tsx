@@ -83,12 +83,13 @@ const BranchWrapper = styled.div`
         z-index: 10;
         color: white;
         width: 100%;
+        height: 85px;
         text-shadow: 2px 2px 0px #541f00;
         position: absolute;
         font-family: 'book';
         font-weight: 400;
         font-size: 55px;
-        top: 15px;
+        top: 7px;
         display: flex;
         justify-content: center;
         align-items: center;
