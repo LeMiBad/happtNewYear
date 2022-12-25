@@ -9,7 +9,7 @@ import branch from './../MenuPage/branch.png'
 
 const StyledGamePage = styled.div`
     z-index: 10;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.35);
     box-sizing: border-box;
     display: flex;
