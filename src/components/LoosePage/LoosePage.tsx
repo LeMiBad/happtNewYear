@@ -40,7 +40,12 @@ const BranchWrapper = styled.div`
 
     h1 {
         z-index: 10;
-        width: 80%;
+        width: 100%;
+        height: 85px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         color: white;
         text-shadow: 2px 2px 0px #541f00;
@@ -48,7 +53,6 @@ const BranchWrapper = styled.div`
         position: absolute;
         font-family: 'book';
         font-weight: 400;
-        left: 10%;
     }
 `
 
@@ -69,7 +73,7 @@ const LoosePage = () => {
         <StyledGamePage>
             <BranchWrapper>
                 <img src={branch} alt='branch'/>
-                <h1 style={{fontSize: '45px', top: '25px'}}>
+                <h1 style={{fontSize: '45px'}}>
                     Упс...
                 </h1>
             </BranchWrapper>

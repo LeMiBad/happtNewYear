@@ -56,7 +56,6 @@ const BranchWrapper = styled.div`
 
 const InputNumber = styled.div`
     position: relative;
-    width: 90%;
     input {
         width: 93%;
         padding: 20px 10px 10px 10px;
@@ -125,7 +124,6 @@ const Politick = styled.div<{isClick: boolean}>`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
     gap: 10px;
     div {
         ${props => !props.isClick? 'background-color: red;' : ''}
@@ -160,7 +158,7 @@ const FinalPage = () => {
             switcher(true)
             setTimeout(() => {
                 setCurrentPage(8)
-            }, 1000)
+            }, 1500)
         }
     }
     const noHandler = () => {
@@ -188,19 +186,21 @@ const FinalPage = () => {
             <RedWrapper>
                 <p>Всё накрыто, гости уже начали уплетать таз с оливье и горячий глинтвейн 🔥</p>
                 <p>Ты прекрасно справился с не менее горячей задачей.</p>
-                <p>Участвуй в розыгрыше набора для глинтвейна! 10 января FutureToday выберет 5 счастливчиков. Оставляй свой номер ниже и участвуй!</p>
+                <p>Участвуй в розыгрыше килограмма мандаринов! 10 января FutureToday выберет 5 счастливчиков. Оставляй свой номер ниже и участвуй!</p>
             </RedWrapper>
-            <InputNumber>
-                <input type={'number'} value={number} onChange={e => setNumber(e.currentTarget.value)}/>
-                <p>Номер телефона</p>
-            </InputNumber>
-            <Politick isClick={isClick}>
-                <div onClick={clickHandler}></div>
-                <p>Я согласен на <span>обработку персональных данных</span> и получение информационных сообщений</p>
-            </Politick>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', margin: '0 auto', width: '85%'}}>
+                <InputNumber>
+                    <input type={'number'} value={number} onChange={e => setNumber(e.currentTarget.value)}/>
+                    <p>Номер телефона</p>
+                </InputNumber>
+                <Politick isClick={isClick}>
+                    <div onClick={clickHandler}></div>
+                    <p>Я согласен на <span>обработку персональных данных</span> и получение информационных сообщений</p>
+                </Politick>
+            </div>
             <ButtonWrapper isClick={isClick}>
                 <div onClick={handler}><Button id={7}>Отправить</Button></div>
-                <p onClick={noHandler}>Не отправлять</p>
+                <p style={{marginTop: 10}} onClick={noHandler}>Не отправлять</p>
             </ButtonWrapper>
         </StyledGamePage>
     </>

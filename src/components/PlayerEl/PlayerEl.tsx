@@ -16,6 +16,7 @@ display: flex;
 
 const Player = styled.img<{hidden?: boolean, vector?: string}>`
     width: 25%;
+    user-select: none;
     ${props => props.vector === 'right'? '' : 'transform: scaleX(-1);'}
     ${props => props.hidden? 'background-color: rgba(0, 0, 0, 0);' : ''}
 `
