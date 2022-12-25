@@ -42,7 +42,7 @@ const SvitokWrapper = styled.div`
         color: #5E401E;
         z-index: 11;
         font-size: 28px;
-        margin-bottom: 5%;
+        margin-bottom: 3%;
         font-family: 'book';
         font-weight: 600;
     }
