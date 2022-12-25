@@ -23,7 +23,7 @@ const StyledGamePage = styled.div`
 const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
-    margin-bottom: 16vh;
+    margin-bottom: 9vh;
     @media (min-height: 700px) {
         margin-top: 4vh !important;
     }
@@ -36,11 +36,15 @@ const BranchWrapper = styled.div`
 
     h1 {
         z-index: 10;
-        width: 50%;
+        width: 100%;
+        height: 85px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         color: white;
         text-align: center;
-        position: absolute;
         font-family: 'book';
         font-weight: 400;
         left: 25%;
@@ -53,7 +57,7 @@ const WinPage = () => {
     return <>
         <StyledGamePage>
             <BranchWrapper>
-                <img src={lenta} alt='lenta'/>
+                <img style={{zIndex: -1}} src={lenta} alt='lenta'/>
                 <h1 style={{fontSize: '34px', top: '5px'}}>
                     Уровень пройден
                 </h1>
