@@ -43,7 +43,9 @@ const BranchWrapper = styled.div`
 
     h1 {
         z-index: 10;
-        width: 80%;
+        width: 100%;
+        height: 100%;
+        margin-top: 8px;
         text-align: center;
         color: white;
         text-shadow: 2px 2px 0px #541f00;
@@ -51,7 +53,6 @@ const BranchWrapper = styled.div`
         position: absolute;
         font-family: 'book';
         font-weight: 400;
-        left: 10%;
     }
 
     .branch {
@@ -201,7 +202,7 @@ const GamePage = () => {
         modalDrops()
         setModal(<Modal onClick={CloseModal}>
                 <RecipePage unButton/>
-                <div style={{marginTop: '54vh', zIndex: 100}}><Button id={1}>Понятно</Button></div>
+                <div style={{marginTop: '54vh', zIndex: 100}}><Button id={4}>Понятно</Button></div>
             </Modal>)
     }
 
