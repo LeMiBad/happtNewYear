@@ -63,7 +63,7 @@ const FoodWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 2px;
 `
 
 const FoodItemWrapper = styled.div`

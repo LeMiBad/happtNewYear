@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { setCurrentPage } from "../../store/currentPage"
 
 const ButtonWrapper = styled.div`
-    padding: 7px;
+    padding: 5px;
     background-color: red;
     display: flex;
     justify-content: center;

@@ -11,6 +11,7 @@ import RecipePage from "../RecipePage/RecipePage"
 import { StyledRules, StyledWrapper } from "../RulesPage/RulesPage"
 import RulesTable from "../RulesTable/RulesTable"
 import branch from './branch.png'
+import logo from './../Desktop/logo.png'
 
 
 
@@ -32,11 +33,12 @@ const BranchWrapper = styled.div`
     width: 250px;
     margin-top: 4vh;
     margin-bottom: 16vh;
-    img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
+    display: flex;
+
+    .logo {
+        z-index: 3000;
+        width: 40%;
+        margin: 5% auto 0 auto;
     }
 
     h1 {
@@ -50,6 +52,13 @@ const BranchWrapper = styled.div`
         font-family: 'book';
         font-weight: 400;
         left: 10%;
+    }
+
+    .branch {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
     }
 `
 
@@ -206,11 +215,12 @@ const GamePage = () => {
                 }) : <></>
             }
             <BranchWrapper>
-                <img src={branch} alt='branch'/>
+                <img className="branch" src={branch} alt='branch'/>
                 <h1 style={{fontSize: allFoods[pickedFood] === 'Куриные рулетики'? '25px' : '45px',
                     top: allFoods[pickedFood] === 'Куриные рулетики'? '40px' : '30px'}}>
                     {allFoods[pickedFood]}
                 </h1>
+                <img className="logo" alt="logo" src={logo}/>
             </BranchWrapper>
             <RecipeList>
                 <ModalButton onClick={openRecipe} pad={20} h={50} deg={329} img='https://s3-alpha-sig.figma.com/img/fc99/cf21/3e025ea75f9b5b86d17c3e021963f1b2?Expires=1672012800&Signature=UNId7Q4B7UTZlbiDHN0SjlbZ5dpk4a8Tcz1mk5QRqccTmmi7uIA6-538VOZSBAab8RxFgAp~NAl~wHdM010ZfZd7Zb5lBwO5PfuOCddOoRpk8vw8sA1YQgpvHnJfVXh7Gp3f7vETPp-9cpsgvsV6Cky4ZXDcRTVC9Eb30yAFhajrpA3mB-XL-qgs16RpEow0d724kaREYQttBA-swnxZSEoM-lWYpeBbw7n3P931P3B5B4YTivQCiUNOkNonwsWAKMk9fSwkHzGgWLpOlQJ9ZZDYonGZVukcQqbGaiy4AE4YMKlHboNix0ZJUOLfCMDkCQkVU7Wz-68oy-icvsD0ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'>
