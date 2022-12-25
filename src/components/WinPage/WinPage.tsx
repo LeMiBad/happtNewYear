@@ -5,6 +5,7 @@ import lenta from './../../icons/lenta.png'
 
 
 
+
 const StyledGamePage = styled.div`
     z-index: 10;
     position: absolute;
@@ -23,6 +24,9 @@ const BranchWrapper = styled.div`
     position: relative;
     width: 100vw;
     margin-bottom: 16vh;
+    @media (min-height: 700px) {
+        margin-top: 4vh !important;
+    }
     img {
         position: absolute;
         left: 0;

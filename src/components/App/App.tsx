@@ -34,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
 
 const App = () => {
     const currentPage = useStore($currentPage)
-    const pages = [<FinalPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>, <FinalPage/>, <LastCarier/>, <Carier/>]
+    const pages = [<WinPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>, <FinalPage/>, <LastCarier/>, <Carier/>]
 
 
     if(window.innerHeight < window.innerWidth) return <Desktop/>
