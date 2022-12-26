@@ -23,7 +23,7 @@ const StyledRulesTable = styled.div`
     width: 70vw;
     height: 70vw;
     background-size: cover !important;
-    background: url('https://s3-alpha-sig.figma.com/img/182a/3f05/2ff81258053225efe07d089a89e6c79d?Expires=1672012800&Signature=pTWX2aJ8SD0U3LiZefFwHm3BGN3y9ryxwdKG5LBxs8ISn5Z6sUYyLVvGrxGo-5s4ePu6R57Liu0PKSRkc0N8c127WVzju88U9~6xOAZ8nyhbfPARc8oSWlEwcKlg4Fk1FZw~RKxx860bIdtGpZSSDv6Y0CCklDV~9vConQyJMwDN7Hqyz-DhtP78uzQ4Qd6lyGlm-G0B7Apxw5nhHROr-LTUCNB20P6VZQei3XjpJeVd76Dsw-JrG45hSJhvt-skDBTxYBs~6yMorlDnRL97hTYhSkmDt~3reRsCaizdhjg4HIPnBRCCpM9BnuKu6Bgz7jfE0uh4lCHXaLilHkugTA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background: url('https://user-images.githubusercontent.com/97335217/209583576-98446a23-1034-484b-8504-8f339283861d.png');
     h1 {
         margin-top: 10vw;
         font-family: 'book';

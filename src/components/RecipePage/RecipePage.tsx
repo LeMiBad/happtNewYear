@@ -124,5 +124,4 @@ const RecipePage: React.FC<{unButton?: boolean}> = ({unButton}) => {
 export default RecipePage
 
 function ym(arg0: number, arg1: string, arg2: string) {
-    
 }

@@ -11,7 +11,7 @@ const StyledBackground = styled.div`
     position: fixed;
     left: 0;
     top: 0;
-    background: radial-gradient(circle,rgb(11 255 241) -43%, #002624 67%);
+    background: radial-gradient(circle,rgb(11 255 241) -43%,rgb(0, 38, 36) 46%);
 `
 
 const Gir = styled.img`
@@ -53,7 +53,7 @@ const LinkWrapper = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 16%;
+    bottom: 5%;
     left: calc(8% + 426px);
     color: white;
     h1 {
