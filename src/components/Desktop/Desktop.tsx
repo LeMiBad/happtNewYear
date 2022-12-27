@@ -3,6 +3,7 @@ import gir from './gir.png'
 import logo from './logo.png'
 import vetka from './vetka.png'
 import snow from './snow.png'
+import QRCode from "react-qr-code"
 
 
 const StyledBackground = styled.div`
@@ -69,6 +70,10 @@ const LinkWrapper = styled.div`
 `
 
 const Desktop = () => {
+
+
+    console.log(window.location.href)
+
     return <>
         <StyledBackground>
             <Man alt="man" src="https://s3-alpha-sig.figma.com/img/0565/3565/30de1a3dd5ad5d9b733f53cfabeb6db1?Expires=1672617600&Signature=nDL8veVqOCFdjd~1E15h-6y2RszRFHdR74kv6v9RDVdoI2SxXS~OWrWggBFJ0v6Ttxyplph4Sfq6aYy8xN1O0ZSv6QcbdgS6jiXqRkYLIRyS9VEc0CQ~90eoXDtY0OtCQTQB0lmYcU2thYXNyySsJdsFmyvVEaFwZ3W2V0Q4xcPnLN3fAQYAO4jmYdr3exPlVVtyAquaxKZMLaiPRwRixgVKiMI5CCywzVLcxHWfYZn9xt9OMslWaqQJsr1vsdYNGvuQljAK2tI49avbG71jeUl84y3p-OhzkhDpNt9OSNOwg1t3J-LMBg45mGaXCT~MQf~tfHtB5gXWBIy~rf1qmw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"></Man>
@@ -79,8 +84,18 @@ const Desktop = () => {
             <LinkWrapper>
                 <h1>ОТКРЫВАЙ ИГРУ С ТЕЛЕФОНА</h1>
                 <p>Сканируй QR-код и переходи ловить ингредиенты!<br/> Псс.. в игре тебя ждут приятные карьерные послания <br/>от работодателей и приз от FutureToday</p>
-                <div>
+                <div style={{paddingLeft: 10}}>
                 <img src="https://qrcod.ru/3b5z.svg" width="250" height="250" alt="12321" />
+                {/* <QRCode
+                    bgColor="rgba(0,0,0,0)"
+                    fgColor='white'
+
+                    style={{
+                        width: 250,
+                        height: 250
+                    }}
+                    value={window.location.href}
+                /> */}
                 </div>
             </LinkWrapper>
         </StyledBackground>

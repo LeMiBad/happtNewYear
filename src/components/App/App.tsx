@@ -36,6 +36,7 @@ const App = () => {
     const currentPage = useStore($currentPage)
     const pages = [<StartPage/>, <MenuPage/>, <RulesPage/>, <RecipePage/>, <GamePage/>, <LoosePage/>, <WinPage/>, <FinalPage/>, <LastCarier/>, <Carier/>]
 
+    
 
     if(window.innerHeight < window.innerWidth) return <Desktop/>
 

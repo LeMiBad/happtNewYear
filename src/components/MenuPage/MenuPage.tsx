@@ -141,5 +141,3 @@ const MenuPage = () => {
 
 export default MenuPage
 
-function ym(arg0: number, arg1: string, arg2: string) {
-}

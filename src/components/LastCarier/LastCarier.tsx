@@ -58,6 +58,3 @@ const LastCarier = () => {
 }
 
 export default LastCarier
-
-function ym(arg0: number, arg1: string, arg2: string) {
-}
